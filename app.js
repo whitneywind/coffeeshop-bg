@@ -1,8 +1,6 @@
 // i'll eventually add something useful here
-let changeBtn = document.getElementById("change-button");
+const changeBtn = document.querySelector("#change-button");
 
-changeBtn.addEventListener("click", bgChange);
-
-function bgChange() {
+changeBtn.addEventListener("click", () => {
     document.body.style.backgroundImage = "IMG_3641.jpg";
-}
+});
