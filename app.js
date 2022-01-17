@@ -4,5 +4,5 @@ let changeBtn = document.getElementById("change-button");
 changeBtn.addEventListener("click", bgChange);
 
 function bgChange() {
-    document.body.style.backgroundImage = "white";
+    document.body.style.backgroundImage = "IMG_3641.jpg";
 }
