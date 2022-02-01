@@ -9,14 +9,32 @@
 </head>
 <body>
     <div id="question-box">
-        <h1>welcome to your local coffeeshop</h1>
+        <h1 id="welcome">welcome to your local coffeeshop</h1>
         <p id="purpose-question">what would you like to do today?</p>
-        <ul>
-            <li>focus</li>
-            <li>relax</li>
+        <ul class="initial-btns" id="purpose-btns">
+            <li id="focus-btn">focus</li>
+            <li id="relax-btn">relax</li>
         </ul>
-
     </div>
+
+    <div class="focus-container">
+        <div class="time-options-holder">
+            <p class="time-option reset">reset</p>
+            <p class="time-option" data-time="300">5</p>
+            <p class="time-option" data-time="600">10</p>
+            <p class="time=option" data-time="1200">20</p>
+            <p class="time-option" data-time="1800">30</p>
+        </div>
+        <div class="timer-container">
+            <p class="time-display"><span>5</span>:<span>00</span></p>
+        </div>
+        <div class="timer-btns">
+            <button>start</button>
+            <button>pause</button>
+        </div>
+        <div class="total-time"></div>
+    </div>
+
     <div class="btn-div">
         <button id="change-button">click here to visit a new coffeeshop</button>
     </div>
