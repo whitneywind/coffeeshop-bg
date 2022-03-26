@@ -43,18 +43,20 @@ changeBtn.addEventListener('click', function() {
 const timerDisplay = document.querySelector("#timer");
 const timeSelect = document.querySelectorAll(".time-option");
 
-let countdown = 0; //variable to set/clear intervals
+let countdown = 0; // variable to set/clear intervals
 let fakeDuration = 600;
 let workTime = 5;
-let seconds = 600; //seconds left on clock
+let seconds = 600; // seconds left on clock
 let isPaused = true;
 let startBtn = document.querySelector("#start-btn");
 let resetBtn = document.querySelector(".reset");
+let varToAccumulate = 0;
 
 timeSelect.forEach(option => {
     option.addEventListener('click', function() {
         fakeDuration = this.getAttribute("data-time");
         workTime = this.getAttribute("data-time") / 60;
+        varToAccumulate = workTime;
         seconds = workTime * 60;
         timeDisplay.textContent = 
             `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)}`;
@@ -100,9 +102,24 @@ function buttonDisplay() {
     }
 }
 
+// accumulate total time
+const totalTime = document.getElementById("time-worked");
+
+function updateTotalTime() {
+    // create variable to hold time picked after start button pressed (is in timer func section)
+    // when timer reaches zero add that amout of time from variable to total
+    if (timeDisplay.textContent === "0:01") {
+      totalTime.innerHTML += varToAccumulate;
+    }
+}
+
+
+
+
 function updateHTML() {
     countdownDisplay();
     buttonDisplay();
+    updateTotalTime();
 }
 
 window.setInterval(updateHTML, 100);
