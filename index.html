@@ -31,18 +31,30 @@
         <div class="timer-btns">
             <button id="start-btn">start</button>
         </div>
+
         <div class="total-time">
             <p>total time focused:</p>
             <p id="time-worked"> 0</p>
         </div>
     </div>
 
+    <div id="like_button_container"></div>
+
     <div class="btn-div">
         <button id="change-button">click here to visit a new coffeeshop</button>
     </div>
 
+   
+
 
 
     <script src="app.js"></script>
+   <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- Load our React component. -->
+  <script src="like_button.js"></script>
 </body>
 </html>
